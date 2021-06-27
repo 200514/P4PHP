@@ -1,35 +1,20 @@
 <?php
-class macbook
-{
-    public $kleur = "";
-    public $matriaal = "";
-    public $vorm = "";
-    public $aanstroom = false;
-  
+include('vierkant.php');
+include('cilinder.php');
 
-    public function __construct($kleur, $matriaal, $vorm, $aanstroom)
-    {
-        $this->kleur = $kleur;
-        $this->matriaal = $matriaal;
-        $this->vorm = $vorm;
-        $this->aanstroom = $aanstroom;
-    }
-    public function accu()
-    {
-      if ($this->aanstroom == true)
-      {
-        echo "De accu wordt opgeladen <br>";
-      }
-      else{
-        echo "De accu wordt niet opgeladen <br>";
-      }
-    }
-    
-}
 
 echo "<pre>";
-$macbook = new macbook ("spacegray","polycarbonaat","vierkant",false,);
-$macbook->accu();
-var_dump($macbook);
+$vierkant = new vierkant(5,5,0,0,"vierkant");
+$vierkant->getOmschrijving();
+$vierkant->berekenOppervlakte();
+var_dump($vierkant);
 echo "<br>---------<br>";
 
+echo "<pre>";
+$cilinder = new cilinder(0,0,3,10,"cilinder");
+$cilinder->getOmschrijving();
+$cilinder->berekenOppervlakte();
+var_dump($cilinder);
+echo "<br>---------<br>";
+
+?>
